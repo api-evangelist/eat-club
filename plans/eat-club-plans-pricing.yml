@@ -1,0 +1,27 @@
+generated: '2026-08-12'
+method: searched
+source: https://www.eatclub.com/
+docs: null
+note: >-
+  EAT Club publishes no pricing page and no plan tiers. https://www.eatclub.com/pricing
+  returns 404 and the word "pricing" appears nowhere in the site sitemap. The only
+  commercial intake path is a Google Form service inquiry linked from the homepage and
+  footer, which routes to a sales conversation; per-meal and per-account pricing is quoted
+  privately to the employer. There is also no API product to price — EAT Club has no
+  developer program (see x-coverage in apis.yml) — so this is an honest zero for both the
+  service and any API plan.
+plan_count: 0
+plans: []
+signup: https://docs.google.com/forms/d/e/1FAIpQLSeZcezqgqvJ9tBPi_73Jp4nh6XM3LzI79rjm31kSEFX5_86_Q/viewform
+signup_model: sales-inquiry-form
+self_serve: false
+free_tier: false
+evidence:
+- url: https://www.eatclub.com/pricing
+  status: 404
+- url: https://www.eatclub.com/sitemap.xml
+  status: 200
+  note: 11 URLs, none pricing-related
+- url: https://www.eatclub.com/
+  status: 200
+  note: homepage CTA links to the Google Form service inquiry, not a pricing page

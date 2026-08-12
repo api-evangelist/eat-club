@@ -1,0 +1,45 @@
+generated: '2026-08-12'
+method: probed
+source: live HTTP probes of https://www.eatclub.com/.well-known/*
+note: >-
+  Every /.well-known/ path probed on the only live EAT Club host returned 404 from the
+  application's own "Plate Not Found" error page — a real 404 status with an HTML body,
+  not a soft-200 SPA catch-all. No document was served, so NO WellKnown or SecurityTxt
+  pointer is wired into apis.yml. This file records a verified absence, not a presence.
+  api.eatclub.com, developer.eatclub.com, developers.eatclub.com, docs.eatclub.com,
+  app.eatclub.com, portal.eatclub.com and admin.eatclub.com do not resolve (NXDOMAIN),
+  so there is no second host to probe. myeatclub.com resolves but its HTTPS listener
+  times out; over HTTP it 301s to www.eatclub.com.
+hosts:
+- host: www.eatclub.com
+  probes:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: api.eatclub.com
+  probes: []
+  note: NXDOMAIN — host does not resolve; nothing to probe.
+results:
+  paths_probed: 7
+  documents_found: 0
+  security_txt: false
+  api_catalog: false
+  agent_card: false

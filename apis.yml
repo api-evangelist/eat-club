@@ -1,7 +1,19 @@
 aid: eat-club
 name: EAT Club
-description: 'EAT Club is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  EAT Club is a corporate meal-delivery platform founded in 2010 in Redwood City, California
+  by Kevin Yang and Rodrigo Santibanez, built around the idea of a "virtual cafeteria" for
+  offices with no on-site dining. Instead of tray-style catering, each employee picks an
+  individually packaged meal from a rotating daily menu produced by EAT Club's own kitchens
+  and restaurant partners, and every order for a building arrives in one synchronized
+  delivery. The company markets the program as an employee lunch benefit and reports 21
+  million meals delivered to roughly 1,145 companies across nine cities. Compass Group USA
+  acquired EAT Club in October 2020 and folded its ordering, production and delivery
+  technology into Compass Digital Labs, where it now underpins workplace, education and
+  healthcare dining accounts across the US and Canada. The consumer-facing product is a
+  React ordering app served from www.eatclub.com; EAT Club publishes no developer program,
+  no API reference, no SDK and no machine-readable contract of any kind.
+image: https://cdn.prod.website-files.com/6324aa1c42c9fa2cf506f5fb/6324c038b740701b09ee39c6_EATClub-logo.png
 url: https://raw.githubusercontent.com/api-evangelist/eat-club/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
@@ -12,6 +24,14 @@ created: '2026-08-12'
 modified: '2026-08-12'
 tags:
 - Company
+- Food Service
+- Corporate Catering
+- Meal Delivery
+- Food Tech
+- Workplace
+- Employee Benefits
+- Logistics
+- Hospitality
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +39,61 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/eat-club-domain-security.yml
 - type: Website
+  url: https://www.eatclub.com/
+- type: GitHubOrganization
+  url: https://github.com/eatclub
+- type: Support
+  url: https://www.eatclub.com/faq
+- type: Login
+  url: https://www.eatclub.com/login
+- type: TermsOfService
+  url: https://www.eatclub.com/terms
+- type: PrivacyPolicy
+  url: https://www.eatclub.com/privacy
+- type: LinkedIn
+  url: https://www.linkedin.com/company/eat-club
+- type: SecondaryMarket
   url: https://forgeglobal.com/eat-club_stock/
+- type: LLMsTxt
+  url: llms/eat-club-llms.txt
+x-enrichment:
+  date: '2026-08-12'
+  status: minimal
+  artifacts_added: 5
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    EAT Club ships only an end-user ordering product: every developer-shaped host
+    (api., developer., developers., docs., app., portal., admin.eatclub.com) is NXDOMAIN,
+    all seven /.well-known/ paths and every spec path on www.eatclub.com return the
+    application's own 404 page, and the sole JSON surface — the undocumented,
+    session-authenticated backend of the "aphrodite" ordering SPA at
+    https://www.eatclub.com/api/v3/ — rejects unauthenticated calls with
+    "Unauthenticated user with no location in session" and has no reference, no key
+    issuance and no terms covering programmatic access, so there is no developer program
+    to profile.
+  evidence:
+  - url: https://www.eatclub.com/openapi.json
+    status: 404
+  - url: https://www.eatclub.com/swagger.json
+    status: 404
+  - url: https://www.eatclub.com/graphql
+    status: 404
+  - url: https://www.eatclub.com/.well-known/security.txt
+    status: 404
+  - url: https://www.eatclub.com/.well-known/agent-card.json
+    status: 404
+  - url: https://www.eatclub.com/.well-known/agent.json
+    status: 404
+  - url: https://www.eatclub.com/llms.txt
+    status: 404
+  - url: https://www.eatclub.com/api/v3/menu-dates/
+    status: 400
+  - url: https://www.eatclub.com/pricing
+    status: 404
+  checked: '2026-08-12'

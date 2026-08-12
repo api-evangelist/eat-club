@@ -1,0 +1,26 @@
+generated: '2026-08-12'
+method: searched
+source: https://www.eatclub.com/
+docs: null
+note: >-
+  EAT Club documents no rate limits because it documents no API. There is no developer
+  portal, no reference and no machine-readable contract at any EAT Club host. The only
+  JSON surface observed is the undocumented, session-authenticated backend of the
+  first-party ordering SPA at https://www.eatclub.com/api/v3/, which is not offered for
+  programmatic use; its unauthenticated responses carry no RateLimit-*, X-RateLimit-* or
+  Retry-After headers. Recorded as an honest zero — no rate-limit pointer is wired into
+  apis.yml, because asserting one would credit EAT Club with a runtime signal it does not
+  publish.
+limit_count: 0
+limits: []
+headers_observed: []
+exhaustion_status: null
+evidence:
+- url: https://www.eatclub.com/api/v3/environment/
+  status: 200
+  note: returns JSON; no rate-limit headers present
+- url: https://www.eatclub.com/api/v3/menu-dates/
+  status: 400
+  note: '"Unauthenticated user with no location in session"; no rate-limit headers present'
+- url: https://www.eatclub.com/openapi.json
+  status: 404
