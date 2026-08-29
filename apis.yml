@@ -13,6 +13,17 @@ description: >-
   healthcare dining accounts across the US and Canada. The consumer-facing product is a
   React ordering app served from www.eatclub.com; EAT Club publishes no developer program,
   no API reference, no SDK and no machine-readable contract of any kind.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://cdn.prod.website-files.com/6324aa1c42c9fa2cf506f5fb/6324c038b740701b09ee39c6_EATClub-logo.png
 url: https://raw.githubusercontent.com/api-evangelist/eat-club/refs/heads/main/apis.yml
 x-type: company
