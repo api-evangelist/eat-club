@@ -24,6 +24,19 @@ deliveryModel:
   - pricing
   generated: '2026-08-28'
   method: derived
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source:
+  - rate-limits
+  - security
+  generated: '2026-09-02'
+  method: derived
 image: https://cdn.prod.website-files.com/6324aa1c42c9fa2cf506f5fb/6324c038b740701b09ee39c6_EATClub-logo.png
 url: https://raw.githubusercontent.com/api-evangelist/eat-club/refs/heads/main/apis.yml
 x-type: company
