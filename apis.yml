@@ -63,6 +63,10 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Plans
+  url: plans/eat-club-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/eat-club-rate-limits.yml
 - url: https://www.eatclub.com/blog/
   type: Blog
 - type: DomainSecurity
